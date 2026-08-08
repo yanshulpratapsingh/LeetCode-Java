@@ -4,10 +4,9 @@
  * Topic: String
  *
  * Approach:
- * Count the number of vowels and consonants in the string.
- * Spaces and digits are ignored.
- * If there are no consonants, return 0.
- * Otherwise, return vowels / consonants.
+ * Count vowels and consonants while traversing the string.
+ * Ignore spaces and digits.
+ * Return vowels / consonants if consonants exist.
  *
  * Time Complexity: O(n)
  * Space Complexity: O(1)
@@ -20,10 +19,10 @@ class Solution {
         int vow = 0;
         int con = 0;
 
-        // Traverse each character of the string
+        // Traverse the string
         for (int i = 0; i < s.length(); i++) {
 
-            // Check whether the character is a vowel
+            // Count vowels
             if (s.charAt(i) == 'a' ||
                 s.charAt(i) == 'e' ||
                 s.charAt(i) == 'i' ||
@@ -33,20 +32,17 @@ class Solution {
                 vow++;
             }
 
-            // Count only lowercase English letters as consonants
+            // Count consonants and ignore digits/spaces
             else if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z') {
                 con++;
             }
         }
 
-        // Avoid division by zero
+        // No consonants means score is 0
         if (con == 0) {
             return 0;
         }
 
-        // Integer division gives floor(vow / con)
-        int score = vow / con;
-
-        return score;
+        return vow / con;
     }
 }

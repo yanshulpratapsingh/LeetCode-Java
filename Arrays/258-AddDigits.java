@@ -15,11 +15,13 @@ class Solution {
 
     public int addDigits(int num) {
 
+        // Repeat until num becomes a single digit
         while (num > 9) {
 
             int sum = 0;
             int temp = num;
 
+            // Calculate the sum of all digits
             while (temp != 0) {
                 int digit = temp % 10;
                 sum += digit;
