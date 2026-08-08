@@ -8,7 +8,7 @@
  * the number becomes a single digit.
  *
  * Time Complexity: O(log n)
- * Space Complexity: O(1)
+ * Space Complexity: O(1).
  */
 
 class Solution {
