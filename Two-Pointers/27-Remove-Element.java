@@ -40,4 +40,4 @@ class Solution {
         // Number of elements which are not equal to val
         return left;
     }
-}s
+}
