@@ -1,0 +1,63 @@
+/*
+ * LeetCode: 13. Roman to Integer
+ * Difficulty: Easy
+ * Topic: String
+ *
+ * Approach:
+ * Convert each Roman numeral character into its corresponding value.
+ *
+ * If the current value is smaller than the next value,
+ * subtract the current value from the total.
+ *
+ * Otherwise, add the current value to the total.
+ *
+ * This automatically handles subtraction cases like:
+ * IV = 4
+ * IX = 9
+ * XL = 40
+ * XC = 90
+ * CD = 400
+ * CM = 900
+ *
+ * Time Complexity: O(n)
+ * Space Complexity: O(1)
+ */
+
+class Solution {
+    public int romanToInt(String s) {
+
+        int total = 0;
+
+        // Process each Roman numeral character
+        for (int i = 0; i < s.length(); i++) {
+
+            int current = value(s.charAt(i));
+
+            // If current value is smaller than the next value,
+            // subtract it instead of adding it
+            if (i + 1 < s.length() && current < value(s.charAt(i + 1))) {
+                total -= current;
+            } 
+            else {
+                total += current;
+            }
+        }
+
+        return total;
+    }
+
+    // Returns the integer value of a Roman numeral character
+    private int value(char c) {
+
+        switch (c) {
+            case 'I': return 1;
+            case 'V': return 5;
+            case 'X': return 10;
+            case 'L': return 50;
+            case 'C': return 100;
+            case 'D': return 500;
+            case 'M': return 1000;
+            default: return 0;
+        }
+    }
+}
