@@ -19,6 +19,8 @@
  * Space Complexity: O(n)
  */
 
+import java.util.HashSet;
+
 class Solution {
     public int maximumUniqueSubarray(int[] nums) {
 
