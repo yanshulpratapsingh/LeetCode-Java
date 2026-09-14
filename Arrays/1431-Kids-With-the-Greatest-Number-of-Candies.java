@@ -5,6 +5,7 @@
 // Time Complexity: O(n)
 // Space Complexity: O(n) - for the result list
 
+import java.util.*;
 class Solution {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
         List<Boolean> ans = new ArrayList<>();
