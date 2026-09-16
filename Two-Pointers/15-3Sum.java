@@ -9,7 +9,7 @@
  * Fix one element using the i pointer, then use two pointers:
  *
  * left  -> starts from i + 1
- * right -> starts from the end
+ * right -> starts from the end.
  *
  * For every fixed element:
  *
